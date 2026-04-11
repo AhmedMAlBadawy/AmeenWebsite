@@ -1,11 +1,12 @@
-# Static export (`output: "export"` in next.config.js) — deploy the `out` folder only.
+# Static export (`output: "export"` in next.config.js) — only `out/` is published.
 #
-# In Amplify Console: Hosting must use platform "WEB" (static), not "WEB_COMPUTE"
-# / "Next.js - SSR". SSR mode expects `.next` trace files and will fail with:
-# "Server trace files are not found ... please check your build artifacts path"
+# Amplify Console (required):
+# - App settings → General → Hosting: use static "WEB", NOT "WEB_COMPUTE" / Next.js SSR.
+# - Build settings: use this file from the repo. If you pasted a custom build spec in
+#   the console, remove it or keep it identical to below — console overrides can ignore
+#   this file and bring back the broken "trace / required-server-files" workaround.
 #
-# If the app is still on WEB_COMPUTE: Amplify Console → App settings → General
-# → Edit → Platform → Hosting with manual deploys / static hosting (WEB).
+# SSR mode causes: "Server trace files are not found ... check your build artifacts path"
 
 version: 1
 frontend:
@@ -16,6 +17,9 @@ frontend:
     build:
       commands:
         - yarn build
+        - echo "Verifying static export (out/)..."
+        - test -f out/index.html || (echo "ERROR: out/index.html missing. Check next.config.js output export." && exit 1)
+        - test -d out/_next || (echo "ERROR: out/_next missing." && exit 1)
   artifacts:
     baseDirectory: out
     files:
