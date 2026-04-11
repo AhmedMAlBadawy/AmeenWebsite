@@ -1,5 +1,5 @@
-# Next.js static export: artifacts are under `out/`. For WEB_COMPUTE, we mirror `.next` into
-# `out/.next` so deploy validation finds trace files. Prefer `aws amplify update-app --platform WEB`.
+# Static export to `out/`. WEB_COMPUTE deploy checks `out/required-server-files.json` and
+# `out/.next/trace`. We mirror `.next` to `out/.next` and copy manifests to `out/` root too.
 
 version: 1
 frontend:
@@ -17,6 +17,9 @@ frontend:
         - cp -r .next out/.next
         - 'test -f out/.next/trace || (echo "Missing out/.next/trace" && exit 1)'
         - 'test -f out/.next/required-server-files.json || (echo "Missing out/.next/required-server-files.json" && exit 1)'
+        - cp .next/required-server-files.json out/required-server-files.json
+        - cp .next/trace out/trace
+        - 'test -f out/required-server-files.json || (echo "Missing out/required-server-files.json" && exit 1)'
   artifacts:
     baseDirectory: out
     files:
