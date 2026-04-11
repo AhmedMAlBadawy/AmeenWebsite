@@ -8,9 +8,9 @@
 #
 # Then redeploy. Valid platform values include WEB (static) and WEB_COMPUTE (SSR).
 #
-# Until you run that, this file copies `required-server-files.json` and `trace` from
-# `.next` into `out` so the WEB_COMPUTE deploy validator finds them under baseDirectory.
-# Build settings in the console should match this file (no duplicate pasted YAML).
+# Until you run that, this file mirrors the whole `.next` folder to `out/.next` after
+# export. WEB_COMPUTE deploy looks for server trace files under out (e.g. `out/.next/trace`),
+# not only `out/trace`. Build settings in the console should match this file.
 
 version: 1
 frontend:
@@ -25,11 +25,11 @@ frontend:
         # Whole lines must be quoted so ":" in echo text is not parsed as YAML mapping.
         - 'test -f out/index.html || (echo "Missing out/index.html" && exit 1)'
         - 'test -d out/_next || (echo "Missing out/_next" && exit 1)'
-        # If the Amplify app is still WEB_COMPUTE, deploy looks under baseDirectory (out) for
-        # Next SSR manifests. Static export leaves them in .next only; copy so deploy passes.
-        # Prefer App settings → static WEB hosting so this is unnecessary.
-        - 'test -f .next/required-server-files.json && cp .next/required-server-files.json out/required-server-files.json'
-        - 'test -f .next/trace && cp .next/trace out/trace'
+        # WEB_COMPUTE deploy validates trace paths like out/.next/trace (see CustomerError text).
+        - rm -rf out/.next
+        - cp -r .next out/.next
+        - 'test -f out/.next/trace || (echo "Missing out/.next/trace" && exit 1)'
+        - 'test -f out/.next/required-server-files.json || (echo "Missing out/.next/required-server-files.json" && exit 1)'
   artifacts:
     baseDirectory: out
     files:
