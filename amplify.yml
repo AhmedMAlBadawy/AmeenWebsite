@@ -1,5 +1,6 @@
-# Static export to `out/`. WEB_COMPUTE deploy checks `out/required-server-files.json` and
-# `out/.next/trace`. We mirror `.next` to `out/.next` and copy manifests to `out/` root too.
+# Static export to `out/`. WEB_COMPUTE expects manifests under `out/`. We mirror `.next` to
+# `out/.next` and duplicate trace paths some deploy checks use. Artifact `**/*` can skip dot
+# dirs on pack; we also list `.next/**/*` so `out/.next` is always included.
 
 version: 1
 frontend:
@@ -19,11 +20,18 @@ frontend:
         - 'test -f out/.next/required-server-files.json || (echo "Missing out/.next/required-server-files.json" && exit 1)'
         - cp .next/required-server-files.json out/required-server-files.json
         - cp .next/trace out/trace
+        - mkdir -p out/server
+        - cp .next/trace out/server/trace
+        - mkdir -p out/standalone/.next out/standalone/server
+        - cp .next/required-server-files.json out/standalone/.next/required-server-files.json
+        - cp .next/trace out/standalone/trace
+        - cp .next/trace out/standalone/server/trace
         - 'test -f out/required-server-files.json || (echo "Missing out/required-server-files.json" && exit 1)'
   artifacts:
     baseDirectory: out
     files:
       - "**/*"
+      - ".next/**/*"
   cache:
     paths:
       - node_modules/**/*
