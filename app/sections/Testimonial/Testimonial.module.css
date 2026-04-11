@@ -1,0 +1,10 @@
+.testimonials {
+  padding: var(--padding-sm) 0;
+}
+
+.angles {
+  width: 25vw;
+  min-width: 150px;
+  margin-right: auto;
+  margin-top: 20px;
+}

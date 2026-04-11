@@ -1,0 +1,67 @@
+
+.Nav {
+  background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  padding: 20px 0;
+  margin: auto;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* Common Styles */
+.deleteThisClass {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbarMenuLg {
+  display: none;
+}
+
+.button {
+  border: 2px solid white;
+  border-radius: 50px;
+  margin: 0 20px;
+  display: flex;
+  place-content: center;
+  padding: 4px 1.7vw;
+}
+
+@media screen and (min-width: 800px) {
+  .toggleIcon {
+    display: none;
+  }
+
+  .toolbarMenuLg {
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .toolbarMenuLg li a {
+    text-align: center;
+    font-size: 0.9vw;
+    color: white;
+    text-decoration: none;
+  }
+
+  .toolbarMenuLg li:not(:last-of-type) {
+    padding-left: 1.7vw;
+  }
+
+  .toolbarMenuLg .iconGroup {
+    display: flex;
+    font-size: 0.9vw;
+    align-items: center;
+    padding-right: 1rem;
+  }
+
+  .toolbarMenuLg .iconGroup p {
+    margin: 0 10px 0 0;
+    color: white;
+  }
+}
+

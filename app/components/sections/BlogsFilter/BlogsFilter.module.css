@@ -1,0 +1,53 @@
+.title,
+.description {
+  text-align: center;
+}
+
+.filtersInputs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inputContainer {
+  margin: 10px;
+  width: 25%;
+}
+
+.SearchInput {
+  margin: 10px;
+  width: 75%;
+}
+
+@media (min-width: 1360px) {
+  .centeredForm {
+    justify-self: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  
+  .flex {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1080px) {
+  .filtersInputs {
+    display: flex;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .inputContainer {
+    margin: 10px;
+    width: 100%;
+  }
+
+  .SearchInput {
+    margin: 10px;
+    width: 100%;
+  }
+}
+
+

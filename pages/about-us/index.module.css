@@ -1,0 +1,179 @@
+.title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.subTitle {
+  font-size: 18px;
+  align-self: start;
+}
+
+.shortDesc {
+  font-size: 18px;
+  text-align: center;
+}
+
+.span {
+  margin: 20px 0;
+}
+
+.listItem {
+  list-style: disc;
+  margin: 20px 20px;
+}
+
+.container {
+  max-width: 900px;
+  padding-top: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainImg {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 65vh;
+  margin: 2% 0;
+}
+
+.setionContainer {
+  padding: 4% 0;
+}
+
+.sectionImages {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sectionImg {
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  width: 30%;
+  height: 267px;
+  margin: 2% 1%;
+  border: 0.5px solid #555;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+  outline: 15px solid #fff;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+}
+
+.setionContainer:nth-child(odd) {
+  background-color: rgba(175, 216, 194, 0.2);
+}
+
+.setionContainer:nth-child(odd) .sectionImg {
+  background-color: rgba(126, 194, 135, 0.2);
+  border-color: #fff;
+}
+
+.foundersSection {
+  padding: 4% 0;
+}
+
+.founderList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.founderCard {
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  width: 30%;
+  height: 365px;
+  margin: 5% 1%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  outline: 15px solid #fff;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.founderImg {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+  height: 70%;
+
+  border: 0.5px solid #555555;
+  margin: 2% 0;
+}
+
+.founderTitle {
+  padding: 10px 0;
+}
+
+.testimonials {
+  padding: var(--padding-sm) 0;
+}
+
+.angles {
+  width: 25vw;
+  min-width: 150px;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .mainImg {
+
+    min-height: 40vh;
+  }
+  .sectionImg {
+    width: 45%;
+    margin-top: 4%;
+  }
+  .founderCard {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sectionImg {
+    width: 45%;
+    margin-top: 3%;
+  }
+
+  .founderCard {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .sectionImg {
+    height: 300px;
+    margin-top: 7%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .mainImg {
+
+    min-height: 30vh;
+  }
+  .sectionImg {
+    width: 90%;
+    height: 240px;
+    outline-width: 10px;
+    padding: 40px;
+  }
+  .founderCard {
+    width: 90%;
+    outline-width: 10px;
+    height: 40vh;
+  }
+}

@@ -1,0 +1,22 @@
+.ContactButton {
+  color: var(--description-color);
+  display: grid;
+  gap: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ContactButton:hover {
+  background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
+  color: white;
+}
+
+.ContactButton:hover path {
+  fill: white;
+}
+
+.ContactButton svg {
+  margin: auto;
+}

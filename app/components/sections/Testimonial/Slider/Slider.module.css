@@ -1,0 +1,95 @@
+.Slider {
+  overflow: hidden;
+}
+
+.sliderSystem {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 11vw auto 11vw;
+  gap: 20px;
+}
+
+.Button {
+  position: relative;
+  z-index: 2;
+}
+
+.Button:disabled {
+  opacity: 40%;
+  cursor: auto;
+}
+
+.slides {
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0;
+  position: relative;
+  height: 75vw;
+}
+
+.slide {
+  border-radius: 1rem;
+  box-shadow: 0px 0px 30px -7px grey;
+  width: 60vw;
+  display: grid;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+}
+
+.rightSlide {
+  opacity: 0;
+  transform: translateX(230%) translateY(-50%) scale(0);
+}
+
+.middleSlide {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  left: 50%;
+}
+
+.leftSlide {
+  opacity: 0;
+  transform: translateX(-230%) translateY(-50%) scale(0);
+}
+
+.hiddenRightSlide {
+  opacity: 0;
+  transform: translateX(230%) translateY(-50%) scale(0);
+}
+
+.hiddenLeftSlide {
+  opacity: 0;
+  transform: translateX(-230%) translateY(-50%) scale(0);
+}
+
+.slide img {
+  width: 100% !important;
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .sliderSystem {
+    grid-template-columns: 80px auto 80px;
+  }
+
+  .slides {
+    height: 35vw;
+  }
+
+  .slide {
+    width: 25vw;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .rightSlide {
+    opacity: 0.25;
+    transform: translateX(96%) translateY(-50%) scale(0.8);
+  }
+
+  .leftSlide {
+    opacity: 0.25;
+    transform: translateX(-96%) translateY(-50%) scale(0.8);
+  }
+}

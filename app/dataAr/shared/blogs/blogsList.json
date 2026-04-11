@@ -1,0 +1,74 @@
+{
+  "blogs": [
+    {
+      "id": 0,
+      "img": "https://img.freepik.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg?w=2000",
+      "CoverImageName": "imageName",
+      "title": "ما هو العلاج الطبيعي؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "0",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 1,
+      "img": "https://img.freepik.com/free-photo/medical-stethoscope-with-paper-cut-family_23-2148488217.jpg?w=2000",
+      "CoverImageName": "imageName",
+      "title": "6 أسباب تجعل العناية بأحبائك وهم بمنازلهم أفضل",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "1",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 2,
+      "img": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "CoverImageName": "imageName",
+      "title": "أيهما يناسبك أكثر، العلاج الطبيعي بالمنزل أم بالعيادات؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "2",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 3,
+      "img": "https://thumbs.dreamstime.com/b/medicine-doctor-holding-red-heart-shape-hand-medical-icon-network-connection-modern-virtual-screen-interface-service-mind-99681240.jpg",
+      "CoverImageName": "imageName",
+      "title": "أيهما يناسبك أكثر، العلاج الطبيعي بالمنزل أم بالعيادات؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "3",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 4,
+      "img": "https://thumbs.dreamstime.com/b/medicine-doctor-stethoscope-touching-medical-icons-network-medicine-doctor-stethoscope-touching-icons-medical-network-111489030.jpg",
+      "CoverImageName": "imageName",
+      "title": "أيهما يناسبك أكثر، العلاج الطبيعي بالمنزل أم بالعيادات؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "10",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 5,
+      "img": "https://img.freepik.com/free-photo/wearing-gloves-prevent-spread-coronavirus_53876-160577.jpg?w=2000",
+      "CoverImageName": "imageName",
+      "title": "أيهما يناسبك أكثر، العلاج الطبيعي بالمنزل أم بالعيادات؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "100",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    },
+    {
+      "id": 6,
+      "img": "https://img.freepik.com/free-photo/wearing-gloves-prevent-spread-coronavirus_53876-160577.jpg?w=2000",
+      "CoverImageName": "imageName",
+      "title": "أيهما يناسبك أكثر، العلاج الطبيعي بالمنزل أم بالعيادات؟",
+      "description": "هل تتعافى من جراحة أو إصابة أنت أو أي شخص تعرفه؟",
+      "views": "50",
+      "caseTypes": ["case1", "case2"],
+      "tags": ["tag1", "tag2"]
+    }
+  ]
+}

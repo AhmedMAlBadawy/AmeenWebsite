@@ -1,0 +1,99 @@
+
+.SideNav {
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: calc(100vh - 80px);
+  top: 80px;
+  overflow: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .SideNav {
+    display: none;
+  }
+}
+
+.background {
+  margin-bottom: 22px;
+}
+
+.listItem {
+  padding-bottom: 2rem;
+}
+
+.listItem a {
+  display: block;
+  color: #308bc4;
+  font-size: 18px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.listItem.signIn  {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.person {
+  width: 17.63px;
+  height: 18.66px;
+}
+.language.ar {
+  margin-right: auto; 
+}
+.language.en {
+  margin-left: auto; 
+}
+
+
+.language button {
+  display: flex;
+  align-items: center;
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0; 
+  gap:0.5rem;
+  text-align: center;
+}
+
+.language p {
+  margin: 0; 
+  font-size: 16px; 
+  color: #308bc4;
+  font-weight: 500;
+  font-family: OmnesMedium;
+  text-align: center;
+
+}
+
+.socials {
+  width: 70%;
+  max-width: 300px;
+  margin: auto;
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+}
+
+.social {
+  width: 30px;
+  height: 30px;
+}
+
+.button {
+  border: 2px solid #308bc4;
+  border-radius: 50px;
+  margin-block-end: 20px;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  padding: 4px 1.7vw;
+}

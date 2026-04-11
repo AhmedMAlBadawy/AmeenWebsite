@@ -1,0 +1,47 @@
+.title,
+.description {
+  text-align: center;
+}
+
+.contacts {
+  margin: 48px 0;
+  padding: 36px 0;
+  background-color: var(--section-bg-color);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.form {
+  display: grid;
+  gap: 32px;
+}
+
+.column {
+  width: 100%;
+  max-width: 550px;
+}
+
+.centered {
+  justify-self: center;
+}
+
+.centeredForm {
+  justify-self: center;
+}
+
+@media (min-width: 1360px) {
+  .centeredForm {
+    justify-self: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,10 @@
+.Procedures {
+  padding: var(--padding-sm) 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}

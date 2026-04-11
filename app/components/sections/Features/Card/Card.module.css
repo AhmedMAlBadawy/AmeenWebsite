@@ -1,0 +1,11 @@
+.Card {
+  display: grid;
+  justify-items: center;
+  width: 9rem;
+}
+
+.title {
+  width: 60%;
+  text-align: center;
+  margin-top: 0.7rem;
+}

@@ -1,0 +1,84 @@
+{
+  "home": {
+    "link": "/",
+    "title": "الرئيسية"
+  },
+  "procedures": {
+    "link": "/#procedures",
+    "title": "خطوات الخدمة"
+  },
+  "packages": {
+    "link": "/#packages",
+    "title": "الأسعار"
+  },
+  "packagesPage": {
+    "link": "/packages",
+    "title": "اكتشف باقي الباقات"
+  },
+  "blogs": {
+    "link": "/blogs",
+    "title": "مقالات أمين"
+  },
+  "blogsPage": "/blogs",
+  "aboutUs": {
+    "link": "/about-us",
+    "title": "عن أمين"
+  },
+  "ourServices": {
+    "link": "/our-services",
+    "title": "خدماتنا"
+  },
+  "contactUs": {
+    "link": "/contact-us",
+    "title": "تواصل معنا"
+  },
+  "whyAmeen": {
+    "link": "/",
+    "title": "لماذا أمين"
+  },
+  "successPartners": {
+    "link": "/",
+    "title": "شركاء النجاح"
+  },
+  "FAQs": {
+    "link": "/",
+    "title": "الأسئلة الشائعة"
+  },
+  "privacy": {
+    "link": "/privacy",
+    "title": "سياسة الخصوصية"
+  },
+  "termsAndConditions": {
+    "link": "/terms-conditions",
+    "title": "شروط الخدمات"
+  },
+  "testimonials": {
+    "link": "/#testimonials",
+    "title": "اراء العملاء"
+  },
+  "joinUs": {
+    "link": "/",
+    "title": "انضم الينا"
+  },
+  "tel": {
+    "link": "tel:920034027",
+    "title": "920034027"
+  },
+  "email": {
+    "link": "mailto:support@ameen.com",
+    "title": "support@ameen.com"
+  },
+  "location": "https://www.google.com/maps/place/Alia+Plaza,+Abi+Bakr+As+Siddiq+Rd,+Ar+Rabi,+Riyadh+13316/@24.8087051,46.6697327,18z/data=!4m2!3m1!1s0x3e2ee34d4bd4cae5:0x8c92d06e2409439c?hl=en-US",
+  "signIn": {
+    "link": "https://www.portal.ameen.care/",
+    "title": "تسجيل دخول"
+  },
+  "booking": {
+    "link": "https://booking.ameen.care",
+    "title": "احجز معنا"
+  },
+  "adviseReq": {
+    "link": "https://booking.ameen.care",
+    "title": "استشرنا الآن"
+  }
+}

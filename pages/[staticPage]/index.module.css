@@ -1,0 +1,24 @@
+.title {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.paragraph {
+  margin: 20px 0;
+}
+
+.listItem {
+  list-style: disc;
+  margin: 20px;
+}
+/*
+** Didn't been used
+.NumListItem {
+  list-style: decimal;
+  margin: 20px;
+}
+*/
+
+.link a {
+  color: var(--active-color);
+}

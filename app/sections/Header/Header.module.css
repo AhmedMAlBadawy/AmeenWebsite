@@ -1,0 +1,150 @@
+.Header {
+  background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 4vw));
+  margin-bottom: -4vw;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  height: 41rem;
+}
+
+.headerContent {
+  display: flex;
+  /* edit */
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.headerContent .welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome .title {
+  font-weight: 900;
+  font-size: 30px;
+  color: #ffffff;
+  margin: 1rem 0;
+  /* edit */
+  text-align: center;
+}
+
+.welcome .text {
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  width: 80%;
+}
+
+.welcome .btn {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2977a8;
+  /*308bc4*/
+  background-color: #f3f9f6;
+  border-radius: 50px;
+  border: none;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.welcome .dots {
+  display: flex;
+  align-items: center;
+  margin: 3.5vmax 0;
+}
+
+.dots .selectedDot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.05) 100%),
+    rgba(241, 241, 241, 0.1);
+  box-shadow: inset 0px 0.5px 2px rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  padding: 5px;
+}
+
+.selectedDot .selectedContent {
+  width: 7.27px;
+  height: 7.27px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.dots .dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.03) 100%),
+    rgba(241, 241, 241, 0.1);
+  box-shadow: inset 0px 0.5px 2px rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  margin: 0 0.25rem;
+}
+
+.headerContent .images {
+  display: flex;
+  justify-content: center;
+}
+
+.headerContent .images .display1,
+.headerContent .images .display2 {
+  width: 100%;
+}
+
+.display2 {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .Header {
+    height: 650px;
+  }
+
+  .headerContent {
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  .headerContent .welcome {
+    width: 50%;
+    align-items: flex-start;
+  }
+
+  .headerContent .welcome .text {
+    text-align: start;
+  }
+
+  .headerContent .images {
+    width: 50%;
+  }
+
+  .display1 {
+    display: none;
+  }
+
+  .display2 {
+    display: block;
+  }
+
+  /* .welcome .text::after {
+    content: "نقدم خدمات العلاج الطبيعي المنزلي لعديد من الحالات الصحية";
+    line-height: 2rem;
+  } */
+}

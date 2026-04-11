@@ -1,0 +1,22 @@
+.InputField {
+  display: block;
+  height: 56px;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  padding: 18px 33px;
+  outline: #308bc4;
+}
+
+.InputField::placeholder {
+  color: #c4c4c4;
+}
+
+.InputField:focus {
+  border-color: #308bc4;
+  border-width: 2px;
+}
+
+.textarea {
+  height: auto;
+}

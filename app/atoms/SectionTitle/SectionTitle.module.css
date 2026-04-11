@@ -1,0 +1,16 @@
+.SectionTitle {
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+  text-align: center;
+}
+
+.atStart {
+  justify-content: start;
+  justify-items: start;
+  text-align: start;
+}
+
+.title {
+  font-size: 2em;
+}

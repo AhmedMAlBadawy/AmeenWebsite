@@ -1,0 +1,132 @@
+.BodyShape {
+  margin-inline-start: auto;
+  position: relative;
+  background-image: url("./../../../../assets/imgs/sections/Treatment/human.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 196px;
+  height: 560px;
+}
+
+.pointer {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.active {
+  width: 35px;
+  height: 35px;
+}
+
+.nek {
+  top: 10%;
+  right: 55%;
+}
+.shoulder {
+  left: 7%;
+  top: 13%;
+}
+
+.elbow {
+  right: 29%;
+  top: 33%;
+}
+.consolidation {
+  right: 30%;
+  top: 38.5%;
+}
+
+.hand {
+  right: -2%;
+  top: 23%;
+}
+.back {
+  left: 4%;
+  top: 33%;
+}
+
+.hip {
+  left: 38%;
+  bottom: 44%;
+}
+
+.knee {
+  left: 70%;
+  bottom: 31%;
+}
+.ankle {
+  left: 12%;
+  bottom: 10%;
+}
+.foot {
+  left: 20%;
+  bottom: 0.9%;
+}
+
+.head {
+  top: 0%;
+  left: 62%;
+}
+
+@media (min-width: 600px) {
+  .BodyShape {
+    background-image: url("./../../../../assets/imgs/sections/Treatment/humanGroup.svg");
+    width: 350px;
+  }
+
+  .nek {
+    top: 10%;
+    right: 30%;
+  }
+
+  .shoulder {
+    left: 49%;
+    top: 12%;
+  }
+
+  .elbow {
+    right: 16%;
+    top: 32%;
+  }
+
+  .consolidation {
+    right: 39%;
+    top: 36.5%;
+  }
+
+  .hand {
+    right: -1%;
+    top: 22%;
+  }
+
+  .back {
+    left: 48%;
+    top: 31%;
+  }
+
+  .hip {
+    left: 64%;
+    bottom: 48%;
+  }
+
+  .knee {
+    left: 83%;
+    bottom: 34%;
+  }
+
+  .ankle {
+    left: 52.6%;
+    bottom: 14.7%;
+  }
+
+  .foot {
+    left: 57%;
+    bottom: 5%;
+  }
+
+  .head {
+    top: 0%;
+    left: 79%;
+  }
+}

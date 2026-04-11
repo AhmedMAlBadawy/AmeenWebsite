@@ -1,0 +1,79 @@
+.multiSelectBox {
+  display: block;
+  height: 56px;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  padding: 18px 20px;
+  outline: #308bc4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: #202020;
+}
+
+.multiSelectBox::placeholder {
+  color: #c4c4c4;
+}
+
+.multiSelectBox:hover {
+  border-color: #308bc4;
+  border-width: 2px;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.dropDownList {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 2;
+  border-radius: 8px;
+}
+
+.dropDownList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555555;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0 0 0 38px;
+  position: relative;
+}
+
+.dropDownList li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  border-bottom: 1px solid #555555;
+
+}
+
+.dropDownList li:hover {
+  background-color: #c4c4c477;
+}
+
+.dropDownList li label {
+  width: 90%;
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 38px;
+}

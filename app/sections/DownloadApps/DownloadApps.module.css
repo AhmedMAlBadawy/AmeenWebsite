@@ -1,0 +1,59 @@
+.apps {
+  padding: var(--padding-sm) 0;
+}
+
+.cards {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media screen and (min-width: 980px) {
+  .cards {
+    gap: 120px;
+  }
+}
+
+.Card {
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 0px 30px -7px grey;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.CardImg {
+  background-color: #afd8c220;
+  border-radius: 1rem;
+  padding: 3rem 7rem 2rem;
+  position: relative;
+}
+
+.CardIcon {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background-color: #afd8c250;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.title {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #555555;
+}
+
+.angles {
+  width: 25vw;
+  min-width: 150px;
+  margin-right: auto;
+  margin-top: 20px;
+}

@@ -1,0 +1,29 @@
+
+.Features {
+  background-color: var(--section-bg-color);
+  padding: var(--padding-lg) 0 var(--padding-md);
+}
+
+.heart {
+  margin-top: -2rem;
+  position: absolute;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+
+.Packages {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 4vw), 0% calc(100% - 0vw));
+  margin-bottom: -14vh;
+  background-color: var(--section-bg-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 25%;
+  padding: var(--padding-sm) 0 var(--padding-lg);
+}

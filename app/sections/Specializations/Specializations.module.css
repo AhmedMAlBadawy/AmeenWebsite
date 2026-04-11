@@ -1,0 +1,53 @@
+.Specializations {
+  padding: var(--padding-sm) 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 600px;
+}
+
+@media screen and (max-width: 792px) {
+  .cards {
+    width: 100%;
+  }
+}
+
+
+.specialization_card {
+  /* columns: 1; */
+  column-span: 1;
+  box-shadow: 0px 0px 30px -7px grey;
+  border-radius: 16px;
+  width: 175px;
+  /* min-width: 170px; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.specialization_card .image {
+  width: 100%;
+  height: 120px;
+  background-color: #AFD8C222;
+  border-radius: 14px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.specialization_card .outline-image {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}

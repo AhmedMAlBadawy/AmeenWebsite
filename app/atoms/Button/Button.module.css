@@ -1,0 +1,9 @@
+.Button a {
+  background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-align: center;
+  min-width: 190px;
+}

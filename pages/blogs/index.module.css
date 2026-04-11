@@ -1,0 +1,34 @@
+.thumbImage {
+  width: 100vw;
+  height: 42vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .thumbImage {
+    height: 20vh;
+  }
+}
+
+
+.title,
+.subtitle {
+  text-align: center;
+}
+
+.Button {
+  background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-align: center;
+  min-width: 190px;
+  font-family: OmnesMedium;
+}
+

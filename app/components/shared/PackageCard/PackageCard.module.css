@@ -1,0 +1,25 @@
+.PackageCard {
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 0px 30px -7px grey;
+  border-radius: 1rem;
+  width: 320px;
+  padding: 1rem;
+}
+
+.badge {
+  position: absolute;
+  left: -1%;
+  top: -1%;
+}
+
+.inner {
+  background-color: #e5f3e7;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+  text-align: center;
+  gap: 20px;
+}

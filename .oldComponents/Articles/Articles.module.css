@@ -1,0 +1,97 @@
+.articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.heartBg {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 5vw;
+}
+
+.articleArrows1 {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 33px;
+}
+
+.articleArrows2 {
+  display: none;
+}
+
+.articlesContainer {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 11vw 55vw 11vw;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.articleCards {
+  padding-top: 2rem;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.Button:disabled {
+  opacity: 40%;
+  cursor: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .articleCards {
+    grid-template-columns: repeat(2, 45%);
+  }
+
+  .articleArrows1 {
+    display: none;
+  }
+
+  .articleArrows2 {
+    display: flex;
+    justify-content: flex-end;
+    /*margin-bottom: 145px;*/
+  }
+
+  .paging {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .articlesContainer {
+    grid-template-columns: 80px auto 80px;
+  }
+
+  .pageIndicator {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .articleCards {
+    /*grid-template-columns: repeat(3, 31.33%);*/
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .articleCards {
+    grid-template-columns: repeat(3, 31.33%);
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .articleCards {
+    grid-template-columns: repeat(4, 23%);
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .articleCards {
+    grid-template-columns: repeat(5, 18.5%);
+  }
+}

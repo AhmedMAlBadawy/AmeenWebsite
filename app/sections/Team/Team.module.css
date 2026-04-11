@@ -1,0 +1,13 @@
+.Team {
+  clip-path: polygon(0% 4vw, 100% 0%, 100% 100%, 0% 100%);
+  background-color: var(--section-bg-color);
+  padding: var(--padding-lg) 0 var(--padding-md);
+}
+
+.cards {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+}

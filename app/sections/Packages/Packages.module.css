@@ -1,0 +1,12 @@
+.Packages {
+  clip-path: polygon(0% 0%, 100% 4vw, 100% 100%, 0% 100%);
+  background-color: var(--section-bg-color);
+  padding: var(--padding-lg) 0 var(--padding-md);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}

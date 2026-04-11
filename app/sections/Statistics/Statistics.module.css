@@ -1,0 +1,23 @@
+.Statistics {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 4vw));
+  background-color: var(--section-bg-color);
+  background-image: url(./../../assets/imgs/sections/Statistics/statisticsLines.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 25%;
+  padding: var(--padding-sm) 0 var(--padding-lg);
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+@media screen and (min-width: 800px) {
+  .Statistics {
+    background-image: url(./../../assets/imgs/sections/Statistics/statisticsLinesLg.svg);
+  }
+}

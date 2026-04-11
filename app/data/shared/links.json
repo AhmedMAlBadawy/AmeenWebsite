@@ -1,0 +1,84 @@
+{
+  "home": {
+    "link": "/",
+    "title": "Home"
+  },
+  "procedures": {
+    "link": "/#procedures",
+    "title": "Service Steps"
+  },
+  "packages": {
+    "link": "/#packages",
+    "title": "Pricing"
+  },
+  "packagesPage": {
+    "link": "/packages",
+    "title": "Discover More Packages"
+  },
+  "blogs": {
+    "link": "/blogs",
+    "title": "Ameen's Articles"
+  },
+  "blogsPage": "/blogs",
+  "aboutUs": {
+    "link": "/about-us",
+    "title": "About Ameen"
+  },
+  "ourServices": {
+    "link": "/our-services",
+    "title": "Our Services"
+  },
+  "contactUs": {
+    "link": "/contact-us",
+    "title": "Contact Us"
+  },
+  "whyAmeen": {
+    "link": "/",
+    "title": "Why Ameen"
+  },
+  "successPartners": {
+    "link": "/",
+    "title": "Success Partners"
+  },
+  "FAQs": {
+    "link": "/",
+    "title": "FAQs"
+  },
+  "privacy": {
+    "link": "/privacy",
+    "title": "Privacy Policy"
+  },
+  "termsAndConditions": {
+    "link": "/terms-conditions",
+    "title": "Terms of Service"
+  },
+  "testimonials": {
+    "link": "/#testimonials",
+    "title": "Customer Reviews"
+  },
+  "joinUs": {
+    "link": "/",
+    "title": "Join Us"
+  },
+  "tel": {
+    "link": "tel:920034027",
+    "title": "920034027"
+  },
+  "email": {
+    "link": "mailto:support@ameen.com",
+    "title": "support@ameen.com"
+  },
+  "location": "https://www.google.com/maps/place/Alia+Plaza,+Abi+Bakr+As+Siddiq+Rd,+Ar+Rabi,+Riyadh+13316/@24.8087051,46.6697327,18z/data=!4m2!3m1!1s0x3e2ee34d4bd4cae5:0x8c92d06e2409439c?hl=en-US",
+  "signIn": {
+    "link": "https://www.portal.ameen.care/",
+    "title": "Sign In"
+  },
+  "booking": {
+    "link": "https://booking.ameen.care",
+    "title": "Book with Us"
+  },
+  "adviseReq": {
+    "link": "https://booking.ameen.care",
+    "title": "Consult Us Now"
+  }
+}

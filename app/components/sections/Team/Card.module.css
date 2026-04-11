@@ -1,0 +1,11 @@
+.Card {
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.title {
+  font-size: 12px;
+  margin-top: 3px;
+}

@@ -1,0 +1,9 @@
+.Container {
+  margin: auto;
+  width: 92%;
+}
+@media screen and (min-width: 800px) {
+  .Container {
+    width: 85%;
+  }
+}

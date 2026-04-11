@@ -1,0 +1,20 @@
+.Symptoms {
+  margin-inline-end: auto;
+  display: grid;
+  gap: 20px;
+}
+
+.symptom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.active {
+  color: var(--active-color);
+}
+
+.description {
+  font-size: 0.8rem;
+}

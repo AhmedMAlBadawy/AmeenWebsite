@@ -1,0 +1,114 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import EyeIcon from "./../../../assets/icons/shared/eye";
+import ClockIcon from "./../../../assets/icons/shared/clock";
+
+import styles from "./BlogsCard.module.css";
+import { useEffect } from "react";
+import { useLanguage } from "../../../contexts/LanguageContext";
+
+const BlogsCard = ({
+  img,
+  title,
+  CoverImageName,
+  description,
+  views,
+  minutesToRead,
+  tags,
+  urlKey,
+}) => {
+  const href = `/blogs/${urlKey}`;
+  const { language } = useLanguage();
+
+  description = description ? description.slice(0, 150) + "..." : "Loading ...";
+
+  return (
+    <Link href={href || ""} passHref>
+      <div className={styles.BlogsCard}>
+        <div>
+          <img className={styles.img} src={img} alt={CoverImageName} />
+
+          {/* <Image
+            //width={471}
+            //height={270}
+            className={styles.img}
+            src={img}
+            alt={CoverImageName}
+          /> */}
+        </div>
+
+        {/* {tags?.map((t) => {
+          <span kety={t.id}>{t.name}</span>;
+        })} */}
+
+        <h3 className={styles.title}>{title}</h3>
+
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></p>
+        {JSON.stringify(tags)}
+        <div className={styles.views}>
+          <EyeIcon />
+
+          <span>
+            {language === "ar"
+              ? (+views === 0 || +views > 10) && `${views} مشاهدة`
+              : (+views === 0 || +views > 10) && `${views} views`}
+
+            {language === "ar"
+              ? +views === 1 && "مشاهدة واحدة"
+              : +views === 1 && "1 view"}
+
+            {language === "ar"
+              ? +views === 2 && "مشاهدتان"
+              : +views === 2 && "2 views"}
+
+            {language === "ar"
+              ? +views > 2 && +views < 11 && `${views} مشاهدات`
+              : +views > 2 && +views < 11 && `${views} views`}
+
+            {language === "ar"
+              ? !views && views !== 0 && "لا يوجد بيانات"
+              : !views && views !== 0 && "No data"}
+          </span>
+        </div>
+
+        <div className={styles.minutesToRead}>
+          <ClockIcon />
+
+          <span>
+            {language === "ar"
+              ? (+minutesToRead === 0 || +minutesToRead > 10) &&
+                `${minutesToRead} دقيقة`
+              : (+minutesToRead === 0 || +minutesToRead > 10) &&
+                `${minutesToRead} minutes`}
+
+            {language === "ar"
+              ? +minutesToRead === 1 && "دقيقة واحدة"
+              : +minutesToRead === 1 && "1 minute"}
+
+            {language === "ar"
+              ? +minutesToRead === 2 && "دقيقتان"
+              : +minutesToRead === 2 && "2 minutes"}
+
+            {language === "ar"
+              ? +minutesToRead > 2 &&
+                +minutesToRead < 11 &&
+                `${minutesToRead} دقائق`
+              : +minutesToRead > 2 &&
+                +minutesToRead < 11 &&
+                `${minutesToRead} minutes`}
+
+            {language === "ar"
+              ? !minutesToRead && minutesToRead !== 0 && "لا يوجد بيانات"
+              : !minutesToRead && minutesToRead !== 0 && "No data"}
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default BlogsCard;

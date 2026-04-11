@@ -1,0 +1,13 @@
+.Card {
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.counter {
+  font-size: 35px;
+}

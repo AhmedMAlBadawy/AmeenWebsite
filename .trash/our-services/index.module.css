@@ -1,0 +1,27 @@
+.title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 18px;
+  align-self: start;
+}
+
+.span {
+  margin: 20px 0;
+}
+
+.listItem {
+  list-style: disc;
+  margin: 20px 20px;
+}
+
+.container {
+  max-width: 900px;
+  padding-top: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
