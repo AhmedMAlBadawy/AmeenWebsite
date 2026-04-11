@@ -1,12 +1,16 @@
-# Static export (`output: "export"` in next.config.js) — only `out/` is published.
+# Static export (`output: "export"` in next.config.js) — publish `out/` only.
 #
-# Amplify Console (required):
-# - App settings → General → Hosting: use static "WEB", NOT "WEB_COMPUTE" / Next.js SSR.
-# - Build settings: use this file from the repo. If you pasted a custom build spec in
-#   the console, remove it or keep it identical to below — console overrides can ignore
-#   this file and bring back the broken "trace / required-server-files" workaround.
+# If the app is stuck on WEB_COMPUTE (Next SSR) and the console will not switch to static
+# hosting, AWS often requires the CLI after a prior SSR migration (revert is not in UI).
+# Replace APP_ID and REGION (app id is in Amplify URL or App settings → General).
 #
-# SSR mode causes: "Server trace files are not found ... check your build artifacts path"
+#   aws amplify update-app --app-id APP_ID --platform WEB --region REGION
+#
+# Then redeploy. Valid platform values include WEB (static) and WEB_COMPUTE (SSR).
+#
+# Until you run that, this file copies `required-server-files.json` and `trace` from
+# `.next` into `out` so the WEB_COMPUTE deploy validator finds them under baseDirectory.
+# Build settings in the console should match this file (no duplicate pasted YAML).
 
 version: 1
 frontend:
