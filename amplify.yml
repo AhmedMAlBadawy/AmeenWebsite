@@ -17,9 +17,10 @@ frontend:
     build:
       commands:
         - yarn build
-        - echo "Verifying static export (out/)..."
-        - test -f out/index.html || (echo "ERROR: out/index.html missing. Check next.config.js output export." && exit 1)
-        - test -d out/_next || (echo "ERROR: out/_next missing." && exit 1)
+        - echo "Verifying static export under out/"
+        # Whole lines must be quoted so ":" in echo text is not parsed as YAML mapping.
+        - 'test -f out/index.html || (echo "Missing out/index.html" && exit 1)'
+        - 'test -d out/_next || (echo "Missing out/_next" && exit 1)'
   artifacts:
     baseDirectory: out
     files:
