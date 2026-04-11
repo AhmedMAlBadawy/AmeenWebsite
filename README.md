@@ -17,7 +17,7 @@
 
 - Don't style pages, create a component and style it then import it in its proper page.
 
-- Don't use the \_app.js file in any styling or logic.
+- Keep [`pages/_app.js`](pages/_app.js) limited to **app-wide** concerns only: global CSS and vendor CSS, third-party analytics or chat widgets (for example GTM, Meta Pixel, Intercom), and root providers such as `LanguageProvider`. Do not add page-specific styling, layout, or feature logic there; put that in pages and components instead.
 
 ---
 

@@ -14,9 +14,7 @@ import { data as dataAr } from "./../../app/dataAr/pages/contact-us/data";
 import styles from "./index.module.css";
 import Head from "next/head";
 import { useLanguage } from "../../app/contexts/LanguageContext";
-
-const base_URL = "https://gateway.ameen.care/";
-//const base_URL = "http://api.physiohome.co/api/";
+import { live_getway_base_URL } from "../../enviroments/enviroments";
 
 const Page = () => {
   const phonePattern =
@@ -71,7 +69,7 @@ const Page = () => {
     e.preventDefault();
 
     if (Name && Phone && Email && Msg /* && EmailIsValid*/) {
-      fetch(`${base_URL}api/v1.0/ContactUs`, {
+      fetch(`${live_getway_base_URL}api/v1.0/ContactUs`, {
         method: "Post",
         headers: {
           "Content-Type": "application/json",
