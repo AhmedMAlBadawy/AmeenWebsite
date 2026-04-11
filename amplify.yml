@@ -21,6 +21,11 @@ frontend:
         # Whole lines must be quoted so ":" in echo text is not parsed as YAML mapping.
         - 'test -f out/index.html || (echo "Missing out/index.html" && exit 1)'
         - 'test -d out/_next || (echo "Missing out/_next" && exit 1)'
+        # If the Amplify app is still WEB_COMPUTE, deploy looks under baseDirectory (out) for
+        # Next SSR manifests. Static export leaves them in .next only; copy so deploy passes.
+        # Prefer App settings → static WEB hosting so this is unnecessary.
+        - 'test -f .next/required-server-files.json && cp .next/required-server-files.json out/required-server-files.json'
+        - 'test -f .next/trace && cp .next/trace out/trace'
   artifacts:
     baseDirectory: out
     files:
