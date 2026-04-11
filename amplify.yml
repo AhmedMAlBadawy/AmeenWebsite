@@ -1,16 +1,5 @@
-# Static export (`output: "export"` in next.config.js) — publish `out/` only.
-#
-# If the app is stuck on WEB_COMPUTE (Next SSR) and the console will not switch to static
-# hosting, AWS often requires the CLI after a prior SSR migration (revert is not in UI).
-# Replace APP_ID and REGION (app id is in Amplify URL or App settings → General).
-#
-#   aws amplify update-app --app-id APP_ID --platform WEB --region REGION
-#
-# Then redeploy. Valid platform values include WEB (static) and WEB_COMPUTE (SSR).
-#
-# Until you run that, this file mirrors the whole `.next` folder to `out/.next` after
-# export. WEB_COMPUTE deploy looks for server trace files under out (e.g. `out/.next/trace`),
-# not only `out/trace`. Build settings in the console should match this file.
+# Next.js static export: artifacts are under `out/`. For WEB_COMPUTE, we mirror `.next` into
+# `out/.next` so deploy validation finds trace files. Prefer `aws amplify update-app --platform WEB`.
 
 version: 1
 frontend:
@@ -21,11 +10,9 @@ frontend:
     build:
       commands:
         - yarn build
-        - echo "Verifying static export under out/"
-        # Whole lines must be quoted so ":" in echo text is not parsed as YAML mapping.
+        - echo Verifying static export under out/
         - 'test -f out/index.html || (echo "Missing out/index.html" && exit 1)'
         - 'test -d out/_next || (echo "Missing out/_next" && exit 1)'
-        # WEB_COMPUTE deploy validates trace paths like out/.next/trace (see CustomerError text).
         - rm -rf out/.next
         - cp -r .next out/.next
         - 'test -f out/.next/trace || (echo "Missing out/.next/trace" && exit 1)'
