@@ -7,6 +7,7 @@
     "build": "next build",
     "build:static": "node scripts/static-export-build.js",
     "zip:amplify": "node scripts/amplify-zip.js",
+    "zip:out": "node scripts/zip-out-contents.js",
     "start": "next start"
   },
   "dependencies": {
