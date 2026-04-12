@@ -1,5 +1,7 @@
-# Artifact root must include manifests + server trace outputs Amplify scans at repo root
-# (path .../src/AmeenWebsite): required-server-files.json, trace, next-server*.nft.json.
+# Stage deploy files under .amplify-deploy/ and set artifacts baseDirectory there.
+# Using baseDirectory: . makes Amplify copy the whole repo into
+# .../AmeenWebsite/amplify-compute-bundle-output/... which is inside the source tree
+# ("Cannot copy ... to a subdirectory of itself").
 
 version: 1
 frontend:
@@ -15,24 +17,20 @@ frontend:
         - 'test -e .next/trace || (echo "Missing .next/trace" && exit 1)'
         - 'test -f .next/next-server.js.nft.json || (echo "Missing .next/next-server.js.nft.json" && exit 1)'
         - 'test -f .next/next-minimal-server.js.nft.json || (echo "Missing .next/next-minimal-server.js.nft.json" && exit 1)'
-        - cp .next/required-server-files.json required-server-files.json
-        - cp -a .next/trace trace
-        - cp .next/next-server.js.nft.json next-server.js.nft.json
-        - cp .next/next-minimal-server.js.nft.json next-minimal-server.js.nft.json
-        - 'test -f required-server-files.json -a -e trace -a -f next-server.js.nft.json -a -f next-minimal-server.js.nft.json || (echo "Missing root Amplify trace files" && exit 1)'
-        - ls -la
+        - rm -rf .amplify-deploy
+        - mkdir -p .amplify-deploy
+        - cp -a .next package.json yarn.lock next.config.js .amplify-deploy/
+        - if [ -d public ]; then cp -a public .amplify-deploy/; fi
+        - cp .next/required-server-files.json .amplify-deploy/required-server-files.json
+        - cp -a .next/trace .amplify-deploy/trace
+        - cp .next/next-server.js.nft.json .amplify-deploy/next-server.js.nft.json
+        - cp .next/next-minimal-server.js.nft.json .amplify-deploy/next-minimal-server.js.nft.json
+        - 'test -f .amplify-deploy/required-server-files.json -a -e .amplify-deploy/trace -a -f .amplify-deploy/next-server.js.nft.json -a -f .amplify-deploy/next-minimal-server.js.nft.json || (echo "Missing staged Amplify trace files" && exit 1)'
+        - ls -la .amplify-deploy
   artifacts:
-    baseDirectory: .
+    baseDirectory: .amplify-deploy
     files:
-      - ".next/**/*"
-      - "public/**/*"
-      - "package.json"
-      - "yarn.lock"
-      - "next.config.js"
-      - "required-server-files.json"
-      - "trace"
-      - "next-server.js.nft.json"
-      - "next-minimal-server.js.nft.json"
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
