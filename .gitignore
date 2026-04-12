@@ -37,3 +37,7 @@ yarn-error.log*
 .vercel
 build_log_2.txt
 build_log.txt
+
+# local static zip artifacts (manual Amplify upload)
+/out.zip
+/ameen-static-out.zip
