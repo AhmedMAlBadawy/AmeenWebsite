@@ -26,11 +26,21 @@ frontend:
         - cp .next/next-server.js.nft.json .amplify-deploy/next-server.js.nft.json
         - cp .next/next-minimal-server.js.nft.json .amplify-deploy/next-minimal-server.js.nft.json
         - 'test -f .amplify-deploy/required-server-files.json -a -e .amplify-deploy/trace -a -f .amplify-deploy/next-server.js.nft.json -a -f .amplify-deploy/next-minimal-server.js.nft.json || (echo "Missing staged Amplify trace files" && exit 1)'
+        - 'test -d .amplify-deploy/.next/server || (echo "Staged .next/server missing — artifact would be empty for SSR" && exit 1)'
         - ls -la .amplify-deploy
+        - ls -la .amplify-deploy/.next/server | head -20
   artifacts:
+    # **/* does not reliably include the hidden .next/ tree; list it explicitly.
     baseDirectory: .amplify-deploy
     files:
-      - "**/*"
+      - ".next/**/*"
+      - "package.json"
+      - "yarn.lock"
+      - "next.config.js"
+      - "required-server-files.json"
+      - "trace"
+      - "next-server.js.nft.json"
+      - "next-minimal-server.js.nft.json"
   cache:
     paths:
       - node_modules/**/*
