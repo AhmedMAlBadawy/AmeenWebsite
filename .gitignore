@@ -11,6 +11,9 @@
 # next.js
 /.next/
 /out/
+# Copied next to repo root in CI for Amplify (see amplify.yml); do not commit
+/required-server-files.json
+/trace
 
 # production
 /build

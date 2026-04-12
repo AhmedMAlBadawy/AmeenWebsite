@@ -1,7 +1,6 @@
-# Amplify compute bundles into amplify-compute-bundle-output/compute/default/ and expects
-# .next/server under that path. Using baseDirectory ".next" strips the ".next" segment from
-# the zip (server/ ends up at bundle root). Use baseDirectory "." and include ".next/**/*"
-# so paths stay compute/default/.next/server (see AWS Next.js SSR hosting docs).
+# - baseDirectory "." + ".next/**/*" keeps compute/default/.next/server in the bundle.
+# - Deploy also looks for required-server-files.json at the *artifact root*; Next only
+#   writes it under .next/, so copy it to the repo root after build.
 
 version: 1
 frontend:
@@ -13,6 +12,10 @@ frontend:
       commands:
         - yarn build
         - 'test -d .next/server || (echo "Missing .next/server" && exit 1)'
+        - 'test -f .next/required-server-files.json || (echo "Missing .next/required-server-files.json" && exit 1)'
+        - cp .next/required-server-files.json required-server-files.json
+        - 'test -f .next/trace && cp .next/trace trace || true'
+        - 'test -f required-server-files.json || (echo "Missing root required-server-files.json" && exit 1)'
   artifacts:
     baseDirectory: .
     files:
@@ -21,6 +24,7 @@ frontend:
       - "package.json"
       - "yarn.lock"
       - "next.config.js"
+      - "required-server-files.json"
   cache:
     paths:
       - node_modules/**/*
