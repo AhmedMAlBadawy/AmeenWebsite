@@ -45,11 +45,12 @@ console.log("\n=== Upload this file to Amplify (Deploy without Git) ===");
 console.log(zipFile);
 console.log("Size:", mb, "MB");
 console.log(
-  "\nAfter upload, open: https://YOUR_APP.amplifyapp.com/_next/static/css/"
+  "\nAfter deploy, open in a NEW incognito window (avoid cache):"
+);
+console.log("  https://YOUR_APP.amplifyapp.com/_next/static/media/");
+console.log(
+  "If you see 404, the zip root is wrong (must be index.html + _next/, not a wrapper folder)."
 );
 console.log(
-  "You should NOT get 404. If you still do, your site may live under a subpath;"
-);
-console.log(
-  "then rebuild with: set NEXT_STATIC_BASE_PATH=/that-path  (then yarn zip:amplify)"
+  "If HTML references old hashes but files are new, hard-refresh or wait for CDN."
 );

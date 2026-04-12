@@ -19,4 +19,13 @@ if (!fs.existsSync(index)) {
   console.error("Missing out/index.html");
   process.exit(1);
 }
+
+const mediaDir = path.join(nextDir, "static", "media");
+if (fs.existsSync(mediaDir)) {
+  const n = fs.readdirSync(mediaDir).length;
+  if (n < 5) {
+    console.warn(`Warning: out/_next/static/media has only ${n} files (expected many).`);
+  }
+}
+
 console.log("OK: out/index.html and out/_next exist.");

@@ -2,9 +2,8 @@
 const staticExport =
   process.env.STATIC_EXPORT === "1" || process.env.STATIC_EXPORT === "true";
 
-// If the site is served under a subpath (e.g. https://host/myapp/), set for static builds:
+// Only if the live URL includes a path prefix, e.g. https://host/myapp/ (rare on Amplify root):
 //   NEXT_STATIC_BASE_PATH=/myapp
-// Then rebuild (yarn build:static). Omit for root deploys like https://xxx.amplifyapp.com/
 let basePath = process.env.NEXT_STATIC_BASE_PATH;
 if (typeof basePath === "string") {
   basePath = basePath.trim();
@@ -18,22 +17,10 @@ if (typeof basePath === "string") {
   basePath = undefined;
 }
 
-// Inlined for pages/_document: <base> + assetPrefix "." so "./_next/..." always resolves to site root
-// (without <base>, /blogs/* would resolve ./_next to /blogs/_next and break CSS/images).
-const htmlBaseHref = staticExport
-  ? basePath
-    ? `${basePath.replace(/\/+$/, "")}/`
-    : "/"
-  : "";
-
 const nextConfig = {
-  // Relative asset prefix + <base href> (see _document.js) fixes hosts where "/_next/..." is misrouted.
-  ...(staticExport ? { output: "export", assetPrefix: "." } : {}),
+  // Default export uses absolute "/_next/..." — correct for Amplify when zip root is index.html + _next/
+  ...(staticExport ? { output: "export" } : {}),
   ...(basePath ? { basePath } : {}),
-  env: {
-    NEXT_PUBLIC_STATIC_EXPORT_BASE: staticExport ? "1" : "",
-    NEXT_PUBLIC_HTML_BASE_HREF: htmlBaseHref,
-  },
   images: {
     unoptimized: true,
     remotePatterns: [
