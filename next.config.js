@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export output to generate the `out` directory during `next build`.
-  output: "export",
+  // Standalone bundles traced server files for platforms like Amplify WEB_COMPUTE.
+  // (Static `output: "export"` + `out/` does not produce the trace layout deploy expects.)
+  output: "standalone",
   images: {
-    // Disable Next.js image optimization so `next/image` works with static export.
     unoptimized: true,
   },
 };

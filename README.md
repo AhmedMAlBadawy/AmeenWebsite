@@ -42,6 +42,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Use Yarn locally so dependencies match Amplify CI (`yarn install --frozen-lockfile`). Do not add `package-lock.json`; mixing npm and Yarn lockfiles causes install warnings and resolution drift.
 
+Production build (same shape Amplify Hosting compute uses after `yarn build` in CI):
+
+```bash
+> yarn build
+> yarn start
+```
+
+`yarn start` runs the Next **standalone** server from `.next/standalone` (not a static `out/` export).
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ---
