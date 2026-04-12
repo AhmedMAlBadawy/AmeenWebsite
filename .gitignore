@@ -14,6 +14,8 @@
 # Copied next to repo root in CI for Amplify (see amplify.yml); do not commit
 /required-server-files.json
 /trace
+/next-server.js.nft.json
+/next-minimal-server.js.nft.json
 
 # production
 /build

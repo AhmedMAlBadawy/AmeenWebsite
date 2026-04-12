@@ -1,6 +1,5 @@
-# - baseDirectory "." + ".next/**/*" keeps compute/default/.next/server in the bundle.
-# - Deploy also looks for required-server-files.json at the *artifact root*; Next only
-#   writes it under .next/, so copy it to the repo root after build.
+# Artifact root must include manifests + server trace outputs Amplify scans at repo root
+# (path .../src/AmeenWebsite): required-server-files.json, trace, next-server*.nft.json.
 
 version: 1
 frontend:
@@ -13,9 +12,14 @@ frontend:
         - yarn build
         - 'test -d .next/server || (echo "Missing .next/server" && exit 1)'
         - 'test -f .next/required-server-files.json || (echo "Missing .next/required-server-files.json" && exit 1)'
+        - 'test -f .next/trace || (echo "Missing .next/trace" && exit 1)'
+        - 'test -f .next/next-server.js.nft.json || (echo "Missing .next/next-server.js.nft.json" && exit 1)'
+        - 'test -f .next/next-minimal-server.js.nft.json || (echo "Missing .next/next-minimal-server.js.nft.json" && exit 1)'
         - cp .next/required-server-files.json required-server-files.json
-        - 'test -f .next/trace && cp .next/trace trace || true'
-        - 'test -f required-server-files.json || (echo "Missing root required-server-files.json" && exit 1)'
+        - cp .next/trace trace
+        - cp .next/next-server.js.nft.json next-server.js.nft.json
+        - cp .next/next-minimal-server.js.nft.json next-minimal-server.js.nft.json
+        - 'test -f required-server-files.json -a -f trace -a -f next-server.js.nft.json -a -f next-minimal-server.js.nft.json || (echo "Missing root Amplify trace files" && exit 1)'
   artifacts:
     baseDirectory: .
     files:
@@ -25,6 +29,9 @@ frontend:
       - "yarn.lock"
       - "next.config.js"
       - "required-server-files.json"
+      - "trace"
+      - "next-server.js.nft.json"
+      - "next-minimal-server.js.nft.json"
   cache:
     paths:
       - node_modules/**/*
