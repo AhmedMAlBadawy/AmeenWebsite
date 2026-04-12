@@ -18,9 +18,22 @@ if (typeof basePath === "string") {
   basePath = undefined;
 }
 
+// Inlined for pages/_document: <base> + assetPrefix "." so "./_next/..." always resolves to site root
+// (without <base>, /blogs/* would resolve ./_next to /blogs/_next and break CSS/images).
+const htmlBaseHref = staticExport
+  ? basePath
+    ? `${basePath.replace(/\/+$/, "")}/`
+    : "/"
+  : "";
+
 const nextConfig = {
-  ...(staticExport ? { output: "export" } : {}),
+  // Relative asset prefix + <base href> (see _document.js) fixes hosts where "/_next/..." is misrouted.
+  ...(staticExport ? { output: "export", assetPrefix: "." } : {}),
   ...(basePath ? { basePath } : {}),
+  env: {
+    NEXT_PUBLIC_STATIC_EXPORT_BASE: staticExport ? "1" : "",
+    NEXT_PUBLIC_HTML_BASE_HREF: htmlBaseHref,
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
