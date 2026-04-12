@@ -1,6 +1,6 @@
-# Static export to `out/`. WEB_COMPUTE expects manifests under `out/`. We mirror `.next` to
-# `out/.next` and duplicate trace paths some deploy checks use. Artifact `**/*` can skip dot
-# dirs on pack; we also list `.next/**/*` so `out/.next` is always included.
+# WEB_COMPUTE needs a real Next `.next` tree (trace, manifests, server pages). Artifact is
+# repo root with `.next`, `public`, lockfile, plus `out/` for static export HTML and copies of
+# `trace` + `required-server-files.json` under `out/` when Amplify only scans that folder.
 
 version: 1
 frontend:
@@ -11,27 +11,27 @@ frontend:
     build:
       commands:
         - yarn build
-        - echo Verifying static export under out/
+        - echo Verifying Next build output for Amplify compute
+        - 'test -f .next/required-server-files.json || (echo "Missing .next/required-server-files.json" && exit 1)'
+        - 'test -f .next/trace || (echo "Missing .next/trace" && exit 1)'
+        - 'test -d .next/static || (echo "Missing .next/static" && exit 1)'
+        - 'test -f .next/server/pages/index.html || (echo "Missing .next/server/pages/index.html" && exit 1)'
         - 'test -f out/index.html || (echo "Missing out/index.html" && exit 1)'
-        - 'test -d out/_next || (echo "Missing out/_next" && exit 1)'
-        - rm -rf out/.next
-        - cp -r .next out/.next
-        - 'test -f out/.next/trace || (echo "Missing out/.next/trace" && exit 1)'
-        - 'test -f out/.next/required-server-files.json || (echo "Missing out/.next/required-server-files.json" && exit 1)'
-        - cp .next/required-server-files.json out/required-server-files.json
+        - cp .next/required-server-files.json required-server-files.json
+        - cp .next/trace trace
         - cp .next/trace out/trace
-        - mkdir -p out/server
-        - cp .next/trace out/server/trace
-        - mkdir -p out/standalone/.next out/standalone/server
-        - cp .next/required-server-files.json out/standalone/.next/required-server-files.json
-        - cp .next/trace out/standalone/trace
-        - cp .next/trace out/standalone/server/trace
-        - 'test -f out/required-server-files.json || (echo "Missing out/required-server-files.json" && exit 1)'
+        - cp .next/required-server-files.json out/required-server-files.json
   artifacts:
-    baseDirectory: out
+    baseDirectory: .
     files:
-      - "**/*"
       - ".next/**/*"
+      - "public/**/*"
+      - "package.json"
+      - "yarn.lock"
+      - "next.config.js"
+      - "required-server-files.json"
+      - "trace"
+      - "out/**/*"
   cache:
     paths:
       - node_modules/**/*
