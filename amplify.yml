@@ -12,14 +12,15 @@ frontend:
         - yarn build
         - 'test -d .next/server || (echo "Missing .next/server" && exit 1)'
         - 'test -f .next/required-server-files.json || (echo "Missing .next/required-server-files.json" && exit 1)'
-        - 'test -f .next/trace || (echo "Missing .next/trace" && exit 1)'
+        - 'test -e .next/trace || (echo "Missing .next/trace" && exit 1)'
         - 'test -f .next/next-server.js.nft.json || (echo "Missing .next/next-server.js.nft.json" && exit 1)'
         - 'test -f .next/next-minimal-server.js.nft.json || (echo "Missing .next/next-minimal-server.js.nft.json" && exit 1)'
         - cp .next/required-server-files.json required-server-files.json
-        - cp .next/trace trace
+        - cp -a .next/trace trace
         - cp .next/next-server.js.nft.json next-server.js.nft.json
         - cp .next/next-minimal-server.js.nft.json next-minimal-server.js.nft.json
-        - 'test -f required-server-files.json -a -f trace -a -f next-server.js.nft.json -a -f next-minimal-server.js.nft.json || (echo "Missing root Amplify trace files" && exit 1)'
+        - 'test -f required-server-files.json -a -e trace -a -f next-server.js.nft.json -a -f next-minimal-server.js.nft.json || (echo "Missing root Amplify trace files" && exit 1)'
+        - ls -la
   artifacts:
     baseDirectory: .
     files:
