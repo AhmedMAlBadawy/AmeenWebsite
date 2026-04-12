@@ -35,15 +35,6 @@ const HomePage = () => {
           content='علاج طبيعي منزلي, علاج وظيفي, نطق وبلع, تغذية علاجية, علاج طبيعي منزلي الرياض, علاج طبيعي منزلي الدمام, علاج طبيعي منزلي جدة'
         />
 
-        <link rel='shortcut icon' href='/images/ico.ico' />
-        <link
-          rel='preload'
-          href='./../app/assets/fonts/omnes/omnes-medium.otf'
-          as='style'
-          type='font/otf'
-          crossOrigin
-        />
-
         <meta
           name='google-site-verification'
           content='Vi5Bgd1GKu-nAekxVJeAPTxleNjG9T9oU2nXR7ZylVM'
