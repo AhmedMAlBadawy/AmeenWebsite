@@ -6,6 +6,7 @@ import ClockIcon from "./../../../assets/icons/shared/clock";
 
 import styles from "./FirstBlogsCard.module.css";
 import { useLanguage } from "../../../contexts/LanguageContext";
+import { resolveMediaUrl } from "../../../../utils/resolveMediaUrl";
 
 const FirstBlogsCard = ({
   img,
@@ -25,7 +26,7 @@ const FirstBlogsCard = ({
         <div className={styles.imgBox}>
           <img
             className={styles.img}
-            src={img}
+            src={resolveMediaUrl(img)}
             alt={CoverImageName}
             style={{ height: "400px" }}
           />

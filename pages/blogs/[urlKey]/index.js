@@ -15,6 +15,7 @@ import ClockIcon from "../../../app/assets/icons/shared/clock";
 
 import styles from "./index.module.css";
 import { base_URL, site_URL } from "../../../enviroments/enviroments";
+import { resolveMediaUrl } from "../../../utils/resolveMediaUrl";
 
 import Head from "next/head";
 
@@ -165,9 +166,8 @@ const Article = ({ req }) => {
               <Image
                 width={1232}
                 height={600}
-                objectFit='cover'
-                // src={Content?.coverImageName} // until fixed
-                src={Content?.coverImagePath}
+                style={{ objectFit: "cover" }}
+                src={resolveMediaUrl(Content.coverImagePath)}
                 alt={Content?.coverImageAltDescription}
               />
             ) : null}

@@ -8,11 +8,7 @@ import { data as dataEn } from "../../data/sections/Specializations/data";
 import { data as dataAr } from "../../dataAr/sections/Specializations/data";
 
 import styles from "./Specializations.module.css";
-import Image from "next/image";
-import {
-  live_getway_base_URL,
-  testing_getway_base_URL,
-} from "../../../enviroments/enviroments";
+import { live_getway_base_URL } from "../../../enviroments/enviroments";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
@@ -37,10 +33,9 @@ const Specializations = () => {
         <div className={styles.image}>
           <div className={styles["outline-image"]}>
             {card.image && (
-              <Image
+              <img
+                className={styles.cardImage}
                 src={card.image}
-                layout='fill'
-                // height={90}
                 alt={card.title}
               />
             )}

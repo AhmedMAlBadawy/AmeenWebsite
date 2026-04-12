@@ -6,6 +6,28 @@ const nextConfig = {
   ...(staticExport ? { output: "export" } : {}),
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "admin.ameener.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "admin.testing.ameener.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "gateway.ameen.care",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "gateway.testing.ameener.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

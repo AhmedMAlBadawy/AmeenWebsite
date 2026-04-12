@@ -7,6 +7,7 @@ import ClockIcon from "./../../../assets/icons/shared/clock";
 import styles from "./BlogsCard.module.css";
 import { useEffect } from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
+import { resolveMediaUrl } from "../../../../utils/resolveMediaUrl";
 
 const BlogsCard = ({
   img,
@@ -27,7 +28,11 @@ const BlogsCard = ({
     <Link href={href || ""} passHref>
       <div className={styles.BlogsCard}>
         <div>
-          <img className={styles.img} src={img} alt={CoverImageName} />
+          <img
+            className={styles.img}
+            src={resolveMediaUrl(img)}
+            alt={CoverImageName}
+          />
 
           {/* <Image
             //width={471}
