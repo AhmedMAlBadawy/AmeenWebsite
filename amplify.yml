@@ -1,5 +1,6 @@
-# Next standalone output: deploy `.next/standalone` (traced server + minimal node_modules).
-# After `next build`, copy static assets Next expects next to the standalone tree.
+# Next standalone: artifact is `.next/standalone`. Amplify also expects
+# `required-server-files.json` (and often `trace`) at the *root* of that folder, not only
+# under `.next/standalone/.next/`.
 
 version: 1
 frontend:
@@ -14,6 +15,10 @@ frontend:
         - cp -r public .next/standalone/public
         - cp -r .next/static .next/standalone/.next/static
         - 'test -f .next/standalone/.next/required-server-files.json || (echo "Missing standalone required-server-files.json" && exit 1)'
+        - 'test -f .next/trace || (echo "Missing .next/trace" && exit 1)'
+        - cp .next/standalone/.next/required-server-files.json .next/standalone/required-server-files.json
+        - cp .next/trace .next/standalone/trace
+        - 'test -f .next/standalone/required-server-files.json || (echo "Missing root standalone required-server-files.json" && exit 1)'
   artifacts:
     baseDirectory: .next/standalone
     files:
