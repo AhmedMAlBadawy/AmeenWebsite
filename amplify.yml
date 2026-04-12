@@ -1,10 +1,9 @@
-# Next standalone artifact. Amplify deploy looks under `.next/standalone` for manifests,
-# the build `trace` file, and Node file-trace outputs (`*.nft.json`) used as server trace data.
+# Amplify compute bundles into amplify-compute-bundle-output/compute/default/ and expects
+# .next/server under that path. Using baseDirectory ".next" strips the ".next" segment from
+# the zip (server/ ends up at bundle root). Use baseDirectory "." and include ".next/**/*"
+# so paths stay compute/default/.next/server (see AWS Next.js SSR hosting docs).
 
 version: 1
-env:
-  variables:
-    AMPLIFY_NEXTJS_EXPERIMENTAL_TRACE: "true"
 frontend:
   phases:
     preBuild:
@@ -13,32 +12,15 @@ frontend:
     build:
       commands:
         - yarn build
-        - 'test -f .next/standalone/server.js || (echo "Missing standalone server.js" && exit 1)'
-        - cp -r public .next/standalone/public
-        - cp -r .next/static .next/standalone/.next/static
-        - 'test -f .next/standalone/.next/required-server-files.json || (echo "Missing standalone required-server-files.json" && exit 1)'
-        - 'test -f .next/trace || (echo "Missing .next/trace" && exit 1)'
-        - cp .next/standalone/.next/required-server-files.json .next/standalone/required-server-files.json
-        - cp .next/trace .next/standalone/trace
-        - cp .next/trace .next/standalone/.next/trace
-        - cp .next/next-server.js.nft.json .next/standalone/next-server.js.nft.json
-        - cp .next/next-minimal-server.js.nft.json .next/standalone/next-minimal-server.js.nft.json
-        - cp .next/next-server.js.nft.json .next/standalone/.next/next-server.js.nft.json
-        - cp .next/next-minimal-server.js.nft.json .next/standalone/.next/next-minimal-server.js.nft.json
-        - 'test -f .next/standalone/required-server-files.json || (echo "Missing root standalone required-server-files.json" && exit 1)'
-        - 'test -f .next/standalone/trace || (echo "Missing root standalone trace" && exit 1)'
-        - 'test -f .next/standalone/next-server.js.nft.json || (echo "Missing root next-server.js.nft.json" && exit 1)'
+        - 'test -d .next/server || (echo "Missing .next/server" && exit 1)'
   artifacts:
-    baseDirectory: .next/standalone
+    baseDirectory: .
     files:
-      - "**/*"
-      - "trace"
-      - "required-server-files.json"
-      - "next-server.js.nft.json"
-      - "next-minimal-server.js.nft.json"
-      - ".next/trace"
-      - ".next/next-server.js.nft.json"
-      - ".next/next-minimal-server.js.nft.json"
+      - ".next/**/*"
+      - "public/**/*"
+      - "package.json"
+      - "yarn.lock"
+      - "next.config.js"
   cache:
     paths:
       - node_modules/**/*

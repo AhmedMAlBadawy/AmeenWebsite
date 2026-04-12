@@ -49,7 +49,7 @@ Production build (same shape Amplify Hosting compute uses after `yarn build` in 
 > yarn start
 ```
 
-`yarn start` runs the Next **standalone** server from `.next/standalone` (not a static `out/` export).
+`yarn start` runs `next start` (Amplify WEB_COMPUTE expects a normal `.next` output, not only `out/` or standalone).
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
