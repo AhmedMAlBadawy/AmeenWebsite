@@ -1,0 +1,16 @@
+cd d:\Ameen\ameen-website2\AmeenWebsite
+
+# clean previous artifacts
+Remove-Item -Recurse -Force .next,out -ErrorAction SilentlyContinue
+Remove-Item -Force out.zip,amplify-manual-deploy.zip -ErrorAction SilentlyContinue
+
+# build fresh static out/
+$env:STATIC_EXPORT="1"
+npx next build
+node scripts/check-static-out.js
+
+# zip for Amplify manual upload
+node scripts/zip-out-contents.js
+
+# verify fresh timestamps
+Get-Item out, out.zip, amplify-manual-deploy.zip | Select Name, LastWriteTime, Length
