@@ -37,9 +37,20 @@ export const Nav = ({ ShowNav, toggleNavHandler }) => {
       <nav className={styles.Nav}>
         <Container>
           <div className={styles.deleteThisClass}>
-            <Image src={logo} alt='logo'></Image>
+            <Image
+              src={logo}
+              alt='logo'
+              className={styles.logo}
+              sizes='(max-width: 799px) 150px, 180px'
+              priority
+            ></Image>
 
-            <button onClick={toggleNavHandler} className={styles.toggleIcon}>
+            <button
+              type='button'
+              onClick={toggleNavHandler}
+              className={styles.toggleIcon}
+              aria-label='Toggle menu'
+            >
               {ShowNav ? (
                 <Image src={close} alt='close' />
               ) : (

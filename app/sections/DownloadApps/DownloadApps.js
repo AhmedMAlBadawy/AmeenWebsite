@@ -45,7 +45,13 @@ const DownloadApps = () => {
         <div className={styles.CardIcon}>
           <Image width={30} height={30} src={app.appIcon} alt={app.appName} />
         </div>
-        <Image width={150} height={150} src={app.qrCode} alt={app.appName} />
+        <Image
+          width={150}
+          height={150}
+          src={app.qrCode}
+          alt={app.appName}
+          className={styles.qrCode}
+        />
       </div>
       <div>
         <h3 className={styles.name}>{app.appName}</h3>
@@ -56,7 +62,13 @@ const DownloadApps = () => {
 
   const cardsListSmall = data.apps.map((app) => (
     <a href={app.appLink} className={styles.Stores} key={app.id}>
-      <Image width={320} height={100} src={app.appStore} alt={app.appName} />
+      <Image
+        width={320}
+        height={100}
+        src={app.appStore}
+        alt={app.appName}
+        className={styles.storeImage}
+      />
     </a>
   ));
 

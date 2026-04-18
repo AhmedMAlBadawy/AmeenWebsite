@@ -1,0 +1,19 @@
+# Optional Git-connected Amplify build for static export (out/).
+# Use as your build spec in the Amplify console, or copy/rename if you replace SSR hosting.
+# The Amplify app must be static "WEB" hosting — not WEB_COMPUTE / SSR — or _next assets may not serve.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install --frozen-lockfile
+    build:
+      commands:
+        - yarn build:static
+  artifacts:
+    baseDirectory: out
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*

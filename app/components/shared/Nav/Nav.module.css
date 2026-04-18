@@ -2,9 +2,9 @@
 .Nav {
   background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  padding: 20px 0;
+  padding: 12px 0;
   margin: auto;
-  height: 80px;
+  min-height: 80px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -15,6 +15,20 @@
 .deleteThisClass {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.toggleIcon {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
 }
 
 .toolbarMenuLg {
@@ -31,6 +45,14 @@
 }
 
 @media screen and (min-width: 800px) {
+  .Nav {
+    padding: 16px 0;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
   .toggleIcon {
     display: none;
   }

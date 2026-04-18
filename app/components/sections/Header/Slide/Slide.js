@@ -38,7 +38,7 @@ const Slide = () => {
                   : "Get personalized sessions for all your health needs in the comfort of your home, we offer home services for various health problems, injuries and post-operative rehabilitation."}
               </p>
 
-              <a href='https://booking.ameen.care' className={styles.btn}>
+              <a href='https://airtable.com/apppSpaCOnaAyYFZc/shrRlfwCWkVKxeaC2' className={styles.btn}>
                 {language === "ar" ? "احجز جلسة" : "Book a Session"}
               </a>
 
@@ -89,7 +89,7 @@ const Slide = () => {
                   ? `ممارسو الخدمات الطبية والصحية المرخصون لدينا هم خبراء في الرعاية المنزلية ومتمرسين في التعامل وعلاج ومنع المشاكل الصحية والإصابات والتأهيل ما  بعد العمليات المختلفة في عدد من التخصصات، مثل: العلاج الطبيعي، العلاج الوظيفي، السمع والنطق والتخاطب، التغذية العلاجية والتمريض.`
                   : "Our licensed health and medical practitioners are home care experts who are experienced in treating, preventing and managing health problems, injuries and post-operative rehabilitation in a number of specialties, such as: Physical therapy, Occupational therapy, Speech and Language Pathology and Audiology, Clinical Nutrition and Nursing."}
               </p>
-              <a href='https://booking.ameen.care' className={styles.btn}>
+              <a href='https://airtable.com/apppSpaCOnaAyYFZc/shrRlfwCWkVKxeaC2' className={styles.btn}>
                 {language === "ar" ? "احجز جلسة" : "Book a Session"}
               </a>
               <div className={styles.dots}>
@@ -135,7 +135,7 @@ const Slide = () => {
                   ? `سواء كنت تعاني من آلام، مشكلة صحية، إصابة، أو تحتاج للتأهيل بعد العملية، فإن أُمنائنا جاهزين لمساعدتك في منزلك`
                   : "Whether you are suffering from pain, a health problem, an injury, or need post-operative rehabilitation, our Ameeners is ready to help you in the comfort of your home."}
               </p>
-              <a href='https://booking.ameen.care' className={styles.btn}>
+              <a href='https://airtable.com/apppSpaCOnaAyYFZc/shrRlfwCWkVKxeaC2' className={styles.btn}>
                 {language === "ar" ? "احجز جلسة" : "Book a Session"}
               </a>
               <div className={styles.dots}>

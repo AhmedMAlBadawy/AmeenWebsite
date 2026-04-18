@@ -2,21 +2,22 @@
   background: linear-gradient(90.37deg, #7ec287 0.3%, #308bc4 99.68%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 4vw));
   margin-bottom: -4vw;
+  overflow: hidden;
 }
 
 .Container {
   display: flex;
   flex-direction: column;
-  height: 41rem;
+  min-height: 41rem;
+  padding-top: 1rem;
 }
 
 .headerContent {
   display: flex;
-  /* edit */
-  /* flex-wrap: wrap; */
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
 .headerContent .welcome {
@@ -39,7 +40,8 @@
   font-size: 18px;
   color: #ffffff;
   text-align: center;
-  width: 80%;
+  width: min(92%, 38rem);
+  margin: 0;
 }
 
 .welcome .btn {
@@ -60,7 +62,7 @@
 .welcome .dots {
   display: flex;
   align-items: center;
-  margin: 3.5vmax 0;
+  margin: 1.25rem 0;
 }
 
 .dots .selectedDot {
@@ -100,6 +102,8 @@
 .headerContent .images {
   display: flex;
   justify-content: center;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .headerContent .images .display1,
@@ -107,8 +111,52 @@
   width: 100%;
 }
 
+.display1 :global(img),
+.display2 :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .display2 {
   display: none;
+}
+
+@media screen and (max-width: 799px) {
+  .Header {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 6vw));
+    margin-bottom: -6vw;
+  }
+
+  .Container {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .headerContent .welcome {
+    margin-top: 0.5rem;
+  }
+
+  .welcome .title {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+  }
+
+  .welcome .text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .welcome .btn {
+    padding: 0.9rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .headerContent .images .display1 {
+    max-width: 420px;
+    margin-inline: auto;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -118,8 +166,8 @@
 
   .headerContent {
     justify-content: space-between;
-
     flex-wrap: wrap;
+    gap: 0;
   }
 
   .headerContent .welcome {
@@ -129,6 +177,7 @@
 
   .headerContent .welcome .text {
     text-align: start;
+    width: 90%;
   }
 
   .headerContent .images {

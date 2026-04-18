@@ -10,12 +10,6 @@
   gap: 10px;
 }
 
-@media screen and (min-width: 980px) {
-  .cards {
-    gap: 120px;
-  }
-}
-
 .Card {
   display: grid;
   justify-items: center;
@@ -30,8 +24,10 @@
 .CardImg {
   background-color: #afd8c220;
   border-radius: 1rem;
-  padding: 3rem 7rem 2rem;
+  padding: 2rem 2.25rem 1.5rem;
   position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .CardIcon {
@@ -45,6 +41,20 @@
   height: 48px;
 }
 
+.qrCode {
+  width: min(36vw, 150px);
+  height: auto;
+}
+
+.Stores {
+  display: block;
+}
+
+.storeImage {
+  width: min(90vw, 320px);
+  height: auto;
+}
+
 .title {
   font-size: 12px;
   margin-top: 20px;
@@ -56,4 +66,14 @@
   min-width: 150px;
   margin-right: auto;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 980px) {
+  .cards {
+    gap: 120px;
+  }
+
+  .CardImg {
+    padding: 2rem 2.75rem 1.5rem;
+  }
 }
